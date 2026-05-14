@@ -49,55 +49,27 @@ export default function Navbar() {
   };
 
   return (
-   <nav className="flex items-center justify-between px-10 py-5 shadow-md">
-  {/* Left Side - Logo */}
-  <h1 className="text-2xl font-bold">
+   <nav className="flex flex-col md:flex-row md:items-center md:justify-between px-4 md:px-10 py-4 shadow-md gap-3 md:gap-0">
+  {/* Logo */}
+  <h1 className="text-xl md:text-2xl font-bold">
     Hiya Digital
   </h1>
 
-  {/* Right Side - Navigation */}
-  <div className="flex items-center gap-8 text-lg">
-    <Link
-      href="/"
-      className={`${
-        pathname === "/"
-          ? "bg-black text-white px-4 py-2 rounded-lg"
-          : ""
-      }`}
-    >
+  {/* Nav Section */}
+  <div className="flex flex-wrap md:flex-nowrap items-center gap-3 md:gap-8 text-sm md:text-lg">
+    <Link href="/" className="hover:underline">
       Home
     </Link>
 
-    <Link
-      href={`/services/${currentCountry}`}
-      className={`${
-        pathname.includes("/services")
-          ? "bg-black text-white px-4 py-2 rounded-lg"
-          : ""
-      }`}
-    >
+    <Link href={`/services/${currentCountry}`} className="hover:underline">
       Services
     </Link>
 
-    <Link
-      href={`/work-enquiry/${currentCountry}`}
-      className={`${
-        pathname.includes("/work-enquiry")
-          ? "bg-black text-white px-4 py-2 rounded-lg"
-          : ""
-      }`}
-    >
+    <Link href={`/work-enquiry/${currentCountry}`} className="hover:underline">
       Work Enquiry
     </Link>
 
-    <Link
-      href={`/contact/${currentCountry}`}
-      className={`${
-        pathname.includes("/contact")
-          ? "bg-black text-white px-4 py-2 rounded-lg"
-          : ""
-      }`}
-    >
+    <Link href={`/contact/${currentCountry}`} className="hover:underline">
       Contact
     </Link>
 
@@ -105,19 +77,11 @@ export default function Navbar() {
     <select
       value={currentCountry}
       onChange={handleCountryChange}
-      className="border p-2 rounded"
+      className="border p-1 md:p-2 rounded text-sm md:text-base"
     >
-      <option value="india">
-        🇮🇳 India
-      </option>
-
-      <option value="germany">
-        🇩🇪 Germany
-      </option>
-
-      <option value="usa">
-        🇺🇸 USA
-      </option>
+      <option value="india">🇮🇳 India</option>
+      <option value="germany">🇩🇪 Germany</option>
+      <option value="usa">🇺🇸 USA</option>
     </select>
   </div>
 </nav>
